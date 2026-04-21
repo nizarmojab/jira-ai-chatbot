@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira AI Assistant - Capgemini Engineering</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <!-- Hamburger Menu Button -->
+                <button class="nav-icon-btn sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="logo-wrapper">
+                    <img src="{{ url_for('static', filename='images/Capgemini-Engineering.png') }}"
+                         alt="Capgemini Engineering"
+                         class="company-logo"
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="nav-divider"></div>
+                <div class="nav-brand">
+                    <div class="nav-title">
+                        <i class="fas fa-comments"></i>
+                        <span>Jira AI Assistant</span>
+                    </div>
+                    <div class="nav-subtitle">
+                        <span>Infotainment & Connectivity</span>
+                        <span class="nav-dot">•</span>
+                        <span>Stellantis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-center">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search ticket (SCRUM-XXX) or ask a question..." id="navSearch">
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="project-badge">
+                    <span class="status-dot" id="statusDot"></span>
+                    <div class="project-info">
+                        <span class="project-name" id="projectName">SCRUM</span>
+                        <span class="project-status">Connected</span>
+                    </div>
+                </div>
+
+                <button class="nav-icon-btn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+
+                <button class="nav-icon-btn" title="Help">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- New Chat Button -->
+            <button class="new-chat-btn" id="newChatBtn">
+                <i class="fas fa-plus"></i>
+                <span>New Chat</span>
+            </button>
+
+            <!-- Chat History -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                    <i class="fas fa-history"></i>
+                    Recent Chats
+                </h3>
+                <div class="chat-history-list" id="chatHistoryList">
+                    <!-- Chat history items will be added here dynamically -->
+                    <div class="empty-history">
+                        <i class="fas fa-comments"></i>
+                        <p>No chat history yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="connection-status">
+                    <i class="fas fa-circle" id="connectionIcon"></i>
+                    <span id="connectionText">Connected</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Welcome Screen -->
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h1>Welcome to Jira AI Assistant</h1>
+                    <p>Ask questions in natural language or use quick commands</p>
+
+                    <div class="example-cards">
+                        <div class="example-card" data-query="show me critical bugs">
+                            <div class="example-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="example-content">
+                                <h4>Critical Bugs</h4>
+                                <p>"show me critical bugs"</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-query="what tickets are blocked">
+                            <div class="example-icon">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div class="example-content">
+                                <h4>Blocked Tickets</h4>
+                                <p>"what tickets are blocked"</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-query="sprint report">
+                            <div class="example-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="example-content">
+                                <h4>Sprint Report</h4>
+                                <p>"sprint report"</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-query="analyze SCRUM-5">
+                            <div class="example-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="example-content">
+                                <h4>Analyze Ticket</h4>
+                                <p>"analyze SCRUM-5"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <button class="input-icon-btn" title="Attach file">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <textarea
+                        id="messageInput"
+                        placeholder="Ask your question... (Enter to send, Shift+Enter for new line)"
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Try commands like <code>/sprint</code> or ask a natural question</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

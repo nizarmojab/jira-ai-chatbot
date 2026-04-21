@@ -1,0 +1,26 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(python*)",
+            "Bash(pip*)",
+            "Bash(cat*)",
+            "Bash(ls*)",
+            "Bash(mkdir*)",
+            "Bash(cp*)",
+            "Bash(mv*)",
+            "Bash(echo*)",
+            "Read(*)",
+            "Write(*)",
+            "Edit(*)"
+        ],
+        "deny": [
+            "Bash(rm -rf*)",
+            "Bash(curl*)",
+            "Bash(wget*)"
+        ]
+    },
+    "model": "claude-sonnet-4-5",
+    "env": {
+        "PYTHONPATH": "src"
+    }
+}
