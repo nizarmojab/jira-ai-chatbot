@@ -1,50 +1,117 @@
 # Jira AI Chatbot
 
-AI-powered Jira assistant for automotive delivery teams. The project combines Jira Cloud, OpenAI tool calling, a terminal chatbot, and a Flask web UI to turn natural-language questions into actionable project insights.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](#quick-start)
+[![Flask](https://img.shields.io/badge/Flask-Web%20UI-black.svg)](#project-surfaces)
+[![OpenAI](https://img.shields.io/badge/OpenAI-Tool%20Calling-10a37f.svg)](#architecture)
+[![Jira Cloud](https://img.shields.io/badge/Jira-Cloud-0052CC.svg)](#project-overview)
 
-## What This Project Does
+AI-powered Jira assistant for automotive delivery teams. This project connects Jira Cloud with OpenAI tool calling to let users explore tickets, blockers, sprint status, and project health in natural language through a CLI chatbot, a web chat UI, and a live dashboard.
 
-- Search Jira issues in French or English without writing JQL manually
-- Analyze tickets, blockers, dependencies, comments, and sprint health
-- Expose Jira capabilities to the LLM through structured tools
-- Provide two interfaces:
-  - a Rich CLI chatbot
-  - a Flask web chat UI and KPI dashboard
-- Seed a realistic automotive Jira dataset for demos and testing
+## Project Overview
 
-## Project Context
+This repository was designed around a realistic automotive integration scenario:
 
-- Domain: automotive software integration
-- Client scenario: Stellantis
-- Integrator scenario: Capgemini Engineering
-- Suppliers represented in the sample data: Harman and Marelli
-- Default Jira project key: `SCRUM`
+- Client context: Stellantis
+- Engineering context: Capgemini Engineering
+- Suppliers represented in the sample dataset: Harman and Marelli
+- Main Jira project key: `SCRUM`
+- Languages supported in practice: French and English
+
+The goal is simple: turn Jira from a manual JQL-heavy workflow into a conversational assistant that can search, analyze, summarize, and surface operational insights faster.
+
+## Key Features
+
+- Natural-language Jira queries in French or English
+- OpenAI tool-calling agent connected to Jira actions and read operations
+- Rich CLI experience with formatted issue tables and panels
+- Flask web chat interface for conversational ticket exploration
+- Real-time Jira dashboard with KPIs, charts, blocked work, regressions, and sprint data
+- Jira dataset generation scripts for realistic demos and testing
+- Support for ticket details, dependencies, comments, worklogs, project metadata, and sprint health
+
+## Project Surfaces
+
+### 1. CLI chatbot
+
+Terminal-based assistant powered by `Rich`:
+
+- natural-language questions
+- slash commands like `/jql`, `/issue`, `/sprint`, `/my`
+- structured output for issue lists and ticket details
+
+### 2. Web chat UI
+
+Flask app with:
+
+- modern chat layout
+- local chat history in the browser
+- quick query cards
+- connection health check
+
+Run with:
+
+```bash
+python dashboard/chatbot_ui.py
+```
+
+Open: `http://localhost:5001`
+
+### 3. KPI dashboard
+
+Flask dashboard focused on project visibility:
+
+- total tickets
+- critical bugs
+- blocked items
+- overdue work
+- regressions
+- tech debt
+- sprint snapshots
+- charts by type, status, and component
+
+Run with:
+
+```bash
+python dashboard/dashboard.py
+```
+
+Open: `http://localhost:5000`
 
 ## Architecture
 
 ```text
-User -> CLI / Web UI -> LLM Agent -> Jira Tools -> Jira Client -> Jira Cloud
-                                   -> formatted response -> UI
+User
+  |
+  +--> CLI / Web UI / Dashboard
+            |
+            +--> LLM Agent
+                    |
+                    +--> Jira Tool Layer
+                            |
+                            +--> Jira Client
+                                    |
+                                    +--> Jira Cloud REST API
 ```
 
-Main modules:
+Core modules:
 
-- `src/jira_client.py`: low-level Jira Cloud API wrapper
-- `src/jira_tools.py`: tool layer exposed to OpenAI
-- `src/llm_agent.py`: tool-calling agent with short-term memory
-- `src/chatbot.py`: terminal chatbot
-- `dashboard/chatbot_ui.py`: web chat interface
-- `dashboard/dashboard.py`: live Jira KPI dashboard
+- `src/jira_client.py`: Jira Cloud REST wrapper
+- `src/jira_tools.py`: tool definitions and tool execution layer
+- `src/llm_agent.py`: OpenAI-powered agent with tool calls and memory
+- `src/chatbot.py`: terminal chatbot entrypoint
+- `src/formatter.py`: Rich output formatting
+- `dashboard/chatbot_ui.py`: Flask chat UI backend
+- `dashboard/dashboard.py`: Flask KPI dashboard backend
 
-More details: [docs/architecture.md](docs/architecture.md)
+Additional architecture notes: [docs/architecture.md](docs/architecture.md)
 
 ## Repository Structure
 
 ```text
 jira-chatbot/
-|-- dashboard/          # Flask UIs, static assets, templates
+|-- dashboard/          # Flask UIs, templates, JS, CSS, images
 |-- docs/               # architecture and setup notes
-|-- jira_setup/         # Jira dataset generation scripts
+|-- jira_setup/         # Jira dataset generation and enrichment scripts
 |-- src/                # chatbot core
 |-- tests/              # query scenarios and support tests
 |-- test_*.py           # manual smoke tests
@@ -67,7 +134,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Then fill in your Jira and OpenAI credentials in `.env`.
+Then fill in your Jira and OpenAI credentials.
 
 ### 3. Run the CLI chatbot
 
@@ -81,41 +148,73 @@ python src/chatbot.py
 python dashboard/chatbot_ui.py
 ```
 
-Open `http://localhost:5001`
-
-### 5. Run the KPI dashboard
+### 5. Run the dashboard
 
 ```bash
 python dashboard/dashboard.py
 ```
 
-Open `http://localhost:5000`
+## Environment Variables
+
+See [`.env.example`](.env.example).
+
+Main values:
+
+- `JIRA_BASE_URL`
+- `JIRA_EMAIL`
+- `JIRA_API_TOKEN`
+- `JIRA_PROJECT_KEY`
+- `OPENAI_API_KEY`
+- `OPENAI_MODEL`
+
+Optional values:
+
+- `LOG_LEVEL`
+- `MAX_RESULTS`
+- `MEMORY_TURNS`
+- `DRY_RUN`
 
 ## Example Queries
 
 - `show me critical bugs`
-- `quels tickets sont bloqués ?`
+- `quels tickets sont bloques ?`
 - `sprint report`
 - `analyze SCRUM-5`
 - `what blocks SCRUM-42`
+- `show me my assigned issues`
 
-## Jira Demo Data
+## Demo Data and Jira Seeding
 
-The repository includes scripts to populate Jira with a realistic automotive project dataset:
+The repository includes scripts to generate a realistic Jira project dataset for demos:
 
 - `jira_setup/seed_tickets.py`
 - `jira_setup/enrich_tickets.py`
 - `jira_setup/advanced_enrich.py`
 
-These scripts create epics, stories, tasks, bugs, subtasks, sprint data, comments, dependencies, regression tickets, test scenarios, and technical debt items.
+These scripts populate Jira with:
 
-Important: if your Jira project is already populated, do not rerun these scripts blindly.
+- epics
+- stories
+- tasks
+- bugs
+- subtasks
+- comments and worklogs
+- dependencies and blocker chains
+- sprints and roadmap signals
+- regression tickets
+- test scenarios
+- tech debt and improvement backlog
 
-See: [jira_setup/README_setup.md](jira_setup/README_setup.md) and [docs/jira_setup.md](docs/jira_setup.md)
+Important: do not rerun them blindly on a Jira project that already contains data.
+
+More details:
+
+- [jira_setup/README_setup.md](jira_setup/README_setup.md)
+- [docs/jira_setup.md](docs/jira_setup.md)
 
 ## Testing
 
-Manual smoke-test scripts included in the repo:
+Manual smoke tests:
 
 - `python test_connection.py`
 - `python test_jira_tool.py`
@@ -127,19 +226,29 @@ Query scenarios:
 
 - `python tests/test_queries.py`
 
-## GitHub Publishing Notes
+## Screenshots
 
-Before pushing this repository:
+You can improve the GitHub page further by adding screenshots in a `docs/screenshots/` folder and linking them here, for example:
 
-1. Make sure `.env` is never committed.
-2. Use `.env.example` as the public template.
-3. Review hardcoded URLs or organization-specific names if you want a more generic public version.
-4. Add screenshots of the web UI and dashboard if you want a stronger project page.
+```md
+![Web Chat UI](docs/screenshots/chat-ui.png)
+![Dashboard](docs/screenshots/dashboard.png)
+```
+
+## Roadmap
+
+See [docs/ROADMAP.md](docs/ROADMAP.md)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Security
 
-If any real credentials were ever stored in `.env`, rotate them before publishing the repository.
+- Never commit `.env`
+- Always use `.env.example` as the public template
+- If real credentials were ever exposed locally, rotate them before making the repository public
 
-## Status
+## License
 
-The core chatbot flow is implemented, and the project is suitable for demo, iteration, and GitHub presentation. Some parts are still closer to a polished prototype than a production-hardened application.
+This repository is released under the [MIT License](LICENSE).
