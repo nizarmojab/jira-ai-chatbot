@@ -228,12 +228,22 @@ Query scenarios:
 
 ## Screenshots
 
-You can improve the GitHub page further by adding screenshots in a `docs/screenshots/` folder and linking them here, for example:
+### Web Chat UI
 
-```md
-![Web Chat UI](docs/screenshots/chat-ui.png)
-![Dashboard](docs/screenshots/dashboard.png)
-```
+The screenshots below show:
+
+- the home screen of the Jira AI Assistant web interface
+- an example conversation asking for critical bugs in the Jira project
+
+<p align="center">
+  <img src="docs/screenshots/image.png" alt="Jira AI Assistant home screen" width="48%">
+  <img src="docs/screenshots/image%20(1).png" alt="Jira AI Assistant critical bugs query result" width="48%">
+</p>
+
+If you want an even cleaner public repo, rename these files later to:
+
+- `chat-home.png`
+- `chat-critical-bugs.png`
 
 ## Roadmap
 
