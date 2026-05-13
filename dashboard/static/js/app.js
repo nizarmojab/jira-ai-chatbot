@@ -334,6 +334,8 @@ function createMessageActions() {
 function formatText(text) {
     return text
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        // Convert URLs to clickable links (must be before \n replacement)
+        .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-link">$1</a>')
         .replace(/\n/g, '<br>');
 }
 

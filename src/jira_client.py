@@ -89,6 +89,11 @@ class JiraClient:
                 timeout=30,
             )
             response.raise_for_status()
+
+            # Handle 204 No Content (successful updates return empty body)
+            if response.status_code == 204 or not response.text:
+                return {}
+
             return response.json()
 
         except requests.exceptions.HTTPError as e:
@@ -105,6 +110,11 @@ class JiraClient:
             error_msg = f"Network error: {str(e)}"
             logger.error(error_msg)
             raise JiraError(error_msg)
+
+        except ValueError as e:
+            # JSON decode error - response might be empty or invalid
+            logger.warning(f"Invalid JSON response: {e}")
+            return {}
 
     def search_issues(
         self,

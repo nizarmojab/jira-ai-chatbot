@@ -51,14 +51,22 @@ app = Flask(__name__,
 #  Import chatbot components
 # ──────────────────────────────────────────────
 try:
-    from src.llm_agent import process_query
+    from src.orchestrator import Orchestrator
+    from src.agents.search_agent import SearchAgent
+    from src.agents.analyze_agent import AnalyzeAgent
+    from src.agents.update_agent import UpdateAgent
     from src.jira_client import JiraClient
+
     jira_client = JiraClient()
+    orchestrator = Orchestrator()
+    search_agent = SearchAgent(jira_client=jira_client)
+    analyze_agent = AnalyzeAgent(jira_client=jira_client)
+    update_agent = UpdateAgent(jira_client=jira_client)
     CHATBOT_AVAILABLE = True
-    logger.info("✓ Chatbot modules loaded successfully")
-except ImportError as e:
+    logger.info("Multi-agent system loaded: SearchAgent, AnalyzeAgent, UpdateAgent")
+except Exception as e:
     CHATBOT_AVAILABLE = False
-    logger.warning(f"Chatbot modules not found: {e} — using mock responses")
+    logger.warning(f"Chatbot unavailable: {e} - using mock responses")
 
 
 # ──────────────────────────────────────────────
@@ -187,17 +195,102 @@ def chat():
 
         logger.info(f"User query: {message}")
 
-        # Use real chatbot or fallback to mock
+        # Use multi-agent system or fallback to mock
         if CHATBOT_AVAILABLE:
             try:
-                result = process_query(message)
-                logger.info("✓ Real chatbot response generated")
+                # 1. Orchestrator detects intent and routes
+                routing = orchestrator.process_message(message)
+                intent = routing["intent"]
+                agent_name = routing["agent"]
+                context = routing["context"]
+
+                logger.info(f"Intent: {intent} -> Agent: {agent_name}")
+
+                # 2. Call appropriate agent
+                if agent_name == "SearchAgent":
+                    agent_result = search_agent.process(message, context)
+                elif agent_name == "AnalyzeAgent":
+                    agent_result = analyze_agent.process(message, context)
+                elif agent_name == "UpdateAgent":
+                    agent_result = update_agent.process(message, context)
+                else:
+                    agent_result = {
+                        "success": False,
+                        "message": f"Agent {agent_name} not implemented yet",
+                        "error": "Not implemented"
+                    }
+
+                # 3. Add response to orchestrator memory
+                if agent_result["success"]:
+                    orchestrator.add_assistant_response(agent_result["message"])
+
+                # 4. Format response
+                if agent_result["success"]:
+                    data = agent_result.get("data", {})
+
+                    # Format for SearchAgent
+                    if agent_name == "SearchAgent":
+                        result = {
+                            "response": agent_result["message"],
+                            "tickets": data.get("issues", []),
+                            "jql": data.get("jql"),
+                            "count": data.get("total", 0),
+                        }
+                    # Format for AnalyzeAgent
+                    elif agent_name == "AnalyzeAgent":
+                        analysis = data.get("analysis", {})
+                        result = {
+                            "response": agent_result["message"],
+                            "analysis": {
+                                "ticket_key": data.get("ticket_key"),
+                                "summary": data.get("summary"),
+                                "health_score": data.get("health_score"),
+                                "status": analysis.get("status"),
+                                "priority": analysis.get("priority"),
+                                "assignee": analysis.get("assignee"),
+                                "updated_days_ago": analysis.get("updated_days_ago"),
+                                "recommendations": data.get("recommendations", [])
+                            },
+                            "tickets": [],  # No ticket list for analysis
+                            "jql": None,
+                            "count": 0,
+                        }
+                    # Format for UpdateAgent
+                    elif agent_name == "UpdateAgent":
+                        result = {
+                            "response": agent_result["message"],
+                            "update": {
+                                "ticket_key": data.get("ticket_key"),
+                                "action_type": data.get("action_type"),
+                                "old_value": data.get("old_value"),
+                                "new_value": data.get("new_value"),
+                            },
+                            "tickets": [],
+                            "jql": None,
+                            "count": 0,
+                        }
+                    else:
+                        result = {
+                            "response": agent_result["message"],
+                            "tickets": [],
+                            "jql": None,
+                            "count": 0,
+                        }
+                else:
+                    result = {
+                        "response": f"Error: {agent_result.get('error', 'Unknown error')}",
+                        "tickets": [],
+                        "jql": None,
+                        "count": 0,
+                    }
+                logger.info(f"{agent_name} response generated")
             except Exception as e:
                 logger.error(f"Chatbot error: {e}", exc_info=True)
                 result = {
-                    "response": f"❌ Error: {str(e)}",
+                    "response": f"Error: {str(e)}",
                     "tickets": [],
                     "jql": None,
+                    "count": 0,
                 }
         else:
             result = mock_chatbot_response(message)

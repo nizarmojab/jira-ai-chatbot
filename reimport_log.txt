@@ -1,0 +1,40 @@
+
+======================================================================
+  DELETE TICKETS
+======================================================================
+  Range: SCRUM-312 to SCRUM-443
+  Mode: LIVE
+======================================================================
+
+Will delete 132 tickets...
+
+Are you sure you want to DELETE 132 tickets? (yes/no): Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\jira-chatbot\delete_tickets.py", line 109, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\hp\Desktop\jira-chatbot\delete_tickets.py", line 105, in main
+    delete_tickets(start_ticket, end_ticket)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Desktop\jira-chatbot\delete_tickets.py", line 52, in delete_tickets
+    confirm = input(f"Are you sure you want to DELETE {total} tickets? (yes/no): ")
+EOFError: EOF when reading a line
+
+======================================================================
+  COMPLETE REIMPORT WORKFLOW
+======================================================================
+  Excel: Capas test.xlsx
+  Range to delete: SCRUM-312 to SCRUM-443
+  Mode: LIVE
+======================================================================
+
+Auto-confirmed with --yes flag
+  1. DELETE 132 tickets (SCRUM-312 to SCRUM-443)
+  2. REIMPORT 132 tickets with COMPLETE fields
+
+
+======================================================================
+  STEP 1: DELETING EXISTING TICKETS
+======================================================================
+
+
+[ERROR] Deletion failed!

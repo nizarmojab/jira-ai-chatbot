@@ -18,10 +18,17 @@ from typing import Any, Dict, List
 
 import requests
 from requests.auth import HTTPBasicAuth
-from flask import Flask, jsonify, render_template_string
+from flask import Flask, jsonify, render_template_string, render_template, request
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Import multi-agent system
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from src.orchestrator import Orchestrator
+from src.agents.search_agent import SearchAgent
+from src.agents.analyze_agent import AnalyzeAgent
 
 JIRA_BASE_URL  = os.getenv("JIRA_BASE_URL", "").rstrip("/")
 JIRA_EMAIL     = os.getenv("JIRA_EMAIL", "")
@@ -29,6 +36,11 @@ JIRA_API_TOKEN = os.getenv("JIRA_API_TOKEN", "")
 PROJECT_KEY    = os.getenv("JIRA_PROJECT_KEY", "SCRUM")
 
 app = Flask(__name__)
+
+# Initialize multi-agent system
+orchestrator = Orchestrator()
+search_agent = SearchAgent()
+analyze_agent = AnalyzeAgent()
 
 
 # ──────────────────────────────────────────────
@@ -685,11 +697,89 @@ def index():
     return render_template_string(HTML)
 
 
+@app.route("/chat")
+def chat_interface():
+    """Serve the chat interface."""
+    return render_template("index.html")
+
+
+@app.route("/api/chat", methods=["POST"])
+def api_chat():
+    """
+    Process chat message through multi-agent system.
+
+    Request JSON:
+        {
+            "message": "show me critical bugs"
+        }
+
+    Response JSON:
+        {
+            "success": true,
+            "intent": "SEARCH",
+            "agent": "SearchAgent",
+            "message": "Found 5 tickets",
+            "data": {...}
+        }
+    """
+    try:
+        # Get user message
+        data = request.get_json()
+        user_message = data.get("message", "").strip()
+
+        if not user_message:
+            return jsonify({
+                "success": False,
+                "error": "Message is required"
+            }), 400
+
+        # 1. Orchestrator detects intent and routes
+        routing = orchestrator.process_message(user_message)
+        intent = routing["intent"]
+        agent_name = routing["agent"]
+        context = routing["context"]
+
+        # 2. Call appropriate agent
+        result = None
+        if agent_name == "SearchAgent":
+            result = search_agent.process(user_message, context)
+        elif agent_name == "AnalyzeAgent":
+            result = analyze_agent.process(user_message, context)
+        else:
+            # For now, only SearchAgent and AnalyzeAgent are implemented
+            result = {
+                "success": False,
+                "agent": agent_name,
+                "message": f"Agent {agent_name} not yet implemented (coming in FEATURE 5-8)",
+                "error": "Agent not implemented"
+            }
+
+        # 3. Add assistant response to orchestrator memory
+        if result and result.get("success"):
+            orchestrator.add_assistant_response(result["message"])
+
+        # 4. Return response
+        return jsonify({
+            "success": result["success"],
+            "intent": intent,
+            "agent": agent_name,
+            "message": result["message"],
+            "data": result.get("data"),
+            "error": result.get("error")
+        })
+
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+
 if __name__ == "__main__":
     print(f"\n{'='*50}")
     print("  Chatbot Jira — Automotive Dashboard")
     print(f"  Project : {PROJECT_KEY}")
     print(f"  Jira    : {JIRA_BASE_URL}")
     print(f"{'='*50}")
-    print("  → http://localhost:5000\n")
+    print("  -> http://localhost:5000\n")
     app.run(debug=True, port=5000)

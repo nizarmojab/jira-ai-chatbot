@@ -710,6 +710,20 @@ body {
     font-weight: 600;
 }
 
+.message-text .text-link {
+    color: var(--primary-600);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-200);
+    transition: all 0.2s ease;
+    word-break: break-all;
+}
+
+.message-text .text-link:hover {
+    color: var(--primary-700);
+    border-bottom-color: var(--primary-500);
+    background-color: var(--primary-50);
+}
+
 .message-meta {
     display: flex;
     align-items: center;

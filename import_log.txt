@@ -1,0 +1,683 @@
+
+======================================================================
+  IMPORT TICKETS FROM EXCEL -> JIRA
+======================================================================
+  File: Capas test.xlsx
+  Project: SCRUM
+  Mode: LIVE (will create tickets)
+======================================================================
+
+[OK] Loaded 132 rows from Excel
+Columns: Columns: Issue Type, Key, Summary, Assignee, Reporter, Priority, Status, Use cases, Team, Component/s
+
+[OK] Connected to Jira: https://chatbotjira.atlassian.net
+
+Row Row 2: To alert client AVAS faillure for E43
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-444
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-444
+
+Row Row 3: [EURO 7] To alert Anti pollution failure for E43 7
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-445
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-445
+
+Row Row 4: [e-CATA €7] To Display the EOBD Telltale in BEV Vehicles - E
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-446
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-446
+
+Row Row 5: [GSRV2.2] DAA4 new red alert picto for E43
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-447
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-447
+
+Row Row 6: [e-CATA €7] To Alert the client about the power limitation o
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-448
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-448
+
+Row Row 7: [e-CATA €7] Gauge updates skin E43
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-449
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-449
+
+Row Row 8: [e-CATA €7] ONOFF_4030_Group_Z0_ECATA_PREHEATING OnOff updat
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-450
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-450
+
+Row Row 9: GEARBOX_1306_Group_Brake_Level Gearbox update to Display lev
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-451
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-451
+
+Row Row 10: [ISS-0095226] Display orange inter-vehicle lines in ACC defe
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-452
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-452
+
+Row Row 11: xEV overheating feedback (Telltale + Alert image)
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-453
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-453
+
+Row Row 12: GSRv2 DRIVE_127x_Group_ILV_2018_CARUSO updates
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-454
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-454
+
+Row Row 13: GSRv2 Alert pictograms updates
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-455
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-455
+
+Row Row 14: GSRv2 Telltales updates
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-456
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-456
+
+Row Row 15: Miscellaneous MHEV changes: zoning, telltale, maintenance (c
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-457
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-457
+
+Row Row 16: ONOFF_4007_Group_Z0_BYE_BYE & children States WITHOUT / WITH
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-458
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-458
+
+Row Row 17: OBC_2432_Group_Z0_ODB_CARUSO & OBC_5402_MenuPopup_Z1_ODB_CAR
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-459
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-459
+
+Row Row 18: GAUGE_4051_Group_HY_Powermeter_MHEV (GEN_2201)
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-460
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-460
+
+Row Row 19: GAUGE_4010_Group_Z0_POWERMETER_WIDGET / GAUGE_4051_Group_HY_
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-461
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-461
+
+Row Row 20: HYBRID_1001_Group_Z0_Flows_CARUSO_WIDGET / HYBRID_1012_Group
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-462
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-462
+
+Row Row 21: ONOFF_4007_Group_Z0_BYE_BYE / ONOFF_4012_Group_EXIT_PAGE_MHE
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-463
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-463
+
+Row Row 22: [CR] PSADEV-2862074 Improve visibility of SALC lanes color E
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-464
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-464
+
+Row Row 23: NAVIGATION_0086_Group_Navigation_Mirroring HUD_0003_Permanen
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-465
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-465
+
+Row Row 24: ONOFF_4007_Group_Z0_BYE_BYE State=WITHOUT_EXIT_PAGE [CR] PSA
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-466
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-466
+
+Row Row 25: ONOFF_4007_Group_Z0_BYE_BYE / ONOFF_4013_Group_EXIT_PAGE_ICE
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-467
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-467
+
+Row Row 26: [CR] PSADEV-2832954 correction of ONOFF_1031_Label_Distance_
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-468
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-468
+
+Row Row 27: Navigation SUIK delivery for E43 Cluster & eHUD CHINA Autona
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-469
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-469
+
+Row Row 28: [CR] PSADEV-2854476 Small map widget in right position, over
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-470
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-470
+
+Row Row 29: [CR] PSADEV-2854475 Early HMI - wrong init fuel level + batt
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-471
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-471
+
+Row Row 30: [CR] PSADEV-2847418 E43 NavigationLabel overlapping with Fue
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-472
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-472
+
+Row Row 31: [CR] PSADEV-2852387 [E4] Incorrect asset for navigation popu
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-473
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-473
+
+Row Row 32: [CR] PSADEV-2841008 Add missing navigation mask to E43 clust
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-474
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-474
+
+Row Row 33: [CR] PSADEV-2840368 change widget background (replace square
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-475
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-475
+
+Row Row 34: [CR] PSADEV-2839937 CHARGE_REMAINING_TIME =>12 for E43x Clus
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-476
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-476
+
+Row Row 35: [CR] PSADEV-2838741 ISS-0097997 Gearbox overlap D and GSI ar
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-477
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-477
+
+Row Row 36: [CR] PSADEV-2837925 [eHUD] Improvement of sizes for E43
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-478
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-478
+
+Row Row 37: [bugfix] correction of ONOFF_1031_Label_Distance_Trajet trun
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-479
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-479
+
+Row Row 38: NAVIGATION_0084_Group_Navigation_Mirroring Group skinning fo
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-480
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-480
+
+Row Row 39: HUD_9200_MenuPopup_OBC_Z2_ADSD Group skinning for E43x eHUD 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-481
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-481
+
+Row Row 40: HUD_9100_MenuPopup_OBC_Z2_ADML Group skinning for E43x eHUD 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-482
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-482
+
+Row Row 41: HUD_7000_POPUP_MODE_ADAS Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-483
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-483
+
+Row Row 42: HUD_6140_Popup_SALC_Maneuver_Ongoing_Right Group skinning fo
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-484
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-484
+
+Row Row 43: HUD_6130_Popup_SALC_Maneuver_Ongoing_Left Group skinning for
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-485
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-485
+
+Row Row 44: HUD_6120_Popup_SALC_SELECTION_REQUEST Group skinning for E43
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-486
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-486
+
+Row Row 45: HUD_5910_MenuPopup_Z3_DSG Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-487
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-487
+
+Row Row 46: HUD_5900_Popup_Night_Vision Group skinning for E43x eHUD (v0
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-488
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-488
+
+Row Row 47: HUD_5810_MenuPopup_Z2_DSG Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-489
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-489
+
+Row Row 48: HUD_5710_MenuPopup_Z1_ACC_TIV_GAP_SETTINGS Group skinning fo
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-490
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-490
+
+Row Row 49: HUD_5610_MenuPopup_Z3_Ouvrant Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-491
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-491
+
+Row Row 50: HUD_5510_MenuAlert_Z3_Alertes Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-492
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-492
+
+Row Row 51: HUD_5403_MenuPopup_OBC_Z1_ODB_CARUSO Group skinning for E43x
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-493
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-493
+
+Row Row 52: HUD_5210_MenuPopup_Z2_Ouvrant Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-494
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-494
+
+Row Row 53: HUD_5110_MenuAlert_Z2_Alertes Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-495
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-495
+
+Row Row 54: HUD_4304_Group_Speed_Control Group skinning for E43x eHUD (v
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-496
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-496
+
+Row Row 55: HUD_4303_Group_Traction_Chain_Supervision Group skinning for
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-497
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-497
+
+Row Row 56: HUD_1300_Group_MINI_VIEW_ADAS Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-498
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-498
+
+Row Row 57: HUD_1069_Popup_Phone_DOUBLE_CALL Group skinning for E43x eHU
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-499
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-499
+
+Row Row 58: HUD_1066_Popup_Phone_CallInProgressMax Group skinning for E4
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-500
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-500
+
+Row Row 59: HUD_1064_Popup_Phone_IncomingCallMax Group skinning for E43x
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-501
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-501
+
+Row Row 60: HUD_1062_Popup_Phone Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-502
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-502
+
+Row Row 61: HUD_1061_Popup_Phone_OutgoingCall Group skinning for E43x eH
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-503
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-503
+
+Row Row 62: HUD_1060_Popup_Phone_CallList Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-504
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-504
+
+Row Row 63: HUD_1054_Popup_SpeechReco Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-505
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-505
+
+Row Row 64: HUD_1052_Popup_Media Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-506
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-506
+
+Row Row 65: HUD_1051_Popup_Radio Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-507
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-507
+
+Row Row 66: HUD_1050_Popup_Volume Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-508
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-508
+
+Row Row 67: HUD_1040_ListPopup_Media Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-509
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-509
+
+Row Row 68: HUD_1030_ListPopup_Radio Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-510
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-510
+
+Row Row 69: HUD_0727_Group_Z0_POWERMETER_WIDGET Group skinning for E43x 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-511
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-511
+
+Row Row 70: HUD_0720_Group_Z0_ADAS_WIDGET Group skinning for E43x eHUD (
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-512
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-512
+
+Row Row 71: HUD_0600_Group_EYE_BOX Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-513
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-513
+
+Row Row 72: HUD_0301_Group_XVV_CARUSO Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-514
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-514
+
+Row Row 73: HUD_0200_Group_Tachy Group skinning for E43x eHUD (v0)
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-515
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-515
+
+Row Row 74: HUD_0082_Group_Navigation_Widget Group skinning for E43x eHU
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-516
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-516
+
+Row Row 75: HUD_0022_Popup_Navigation_Mirroring_Dialog Group skinning fo
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-517
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-517
+
+Row Row 76: HUD_0020_Popup_Navigation_InstructionVideoDialog Group skinn
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-518
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-518
+
+Row Row 77: HUD_0015_Popup_OnOff_OverHeating Group skinning for E43x eHU
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-519
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-519
+
+Row Row 78: HUD_0003_PermanentPanel_CARUSO Group skinning for E43x eHUD 
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-520
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-520
+
+Row Row 79: DRIVE_3600_Group_Alert_Gulf_Countries Group skinning for E43
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-521
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-521
+
+Row Row 80: DRIVE_1270_Group_ILV_2018_CARUSO Group skinning for E43x eHU
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-522
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-522
+
+Row Row 81: TELLTALES_4206_Group_Z0_MAIN_DEFAULT_PILE_ZONE_CARUSO Group 
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-523
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-523
+
+Row Row 82: SETTINGS_5000_Group_Z0_DATE_TIME_WIDGET Group skinning for E
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-524
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-524
+
+Row Row 83: ONOFF_4011_Group_EXIT_PAGE_BEV Group skinning for E43x Clust
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-525
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-525
+
+Row Row 84: ONOFF_4007_Group_Z0_BYE_BYE / ONOFF_4010_Group_EXIT_PAGE_PHE
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-526
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-526
+
+Row Row 85: ONOFF_4007_Group_Z0_BYE_BYE Group skinning for E43x Cluster_
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-527
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-527
+
+Row Row 86: ONOFF_4006_Group_Z0_ACCUEIL_CARUSO Group skinning for E43x C
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-528
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-528
+
+Row Row 87: ONOFF_4005_Group_ACCUEIL_PAGE_CHARGE Group skinning for E43x
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-529
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-529
+
+Row Row 88: ONOFF_4004_Group_ACCUEIL_ADSD Group skinning for E43x Cluste
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-530
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-530
+
+Row Row 89: ONOFF_4003_Group_ACCUEIL_ADML_CARUSO Group skinning for E43x
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-531
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-531
+
+Row Row 90: ONOFF_0020_Popup_OverHeating Group skinning for E43x Cluster
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-532
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-532
+
+Row Row 91: OBC_6600_MenuPopup_Z2_CHECK_MAINTENANCE_M Group skinning for
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-533
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-533
+
+Row Row 92: OBC_5402_MenuPopup_Z1_ODB_CARUSO Group skinning for E43x Clu
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-534
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-534
+
+Row Row 93: OBC_4001_Group_ELECTRICAL_Autonomy Group skinning for E43x C
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-535
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-535
+
+Row Row 94: OBC_2432_Group_Z0_ODB_CARUSO Group skinning for E43x Cluster
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-536
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-536
+
+Row Row 95: OBC_1220_Group_ODOMETRES_CARUSO Group skinning for E43x Clus
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-537
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-537
+
+Row Row 96: OBC_1101_Image_Cle_maintenance Group skinning for E43x Clust
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-538
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-538
+
+Row Row 97: NAVIGATION_0023_Popup_Mirroring_DIALOG & NAVIGATION_0020_Pop
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-539
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-539
+
+Row Row 98: NAVIGATION_0020_Popup_InstructionVideoDialog Group skinning 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-540
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-540
+
+Row Row 99: HYBRID_1001_Group_Z0_Flows_BEV_CARUSO Group skinning for E43
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-541
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-541
+
+Row Row 100: GEN_4304_Group_Speed_Control Group skinning for E43x Cluster
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-542
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-542
+
+Row Row 101: GEN_4303_Group_Traction_Chain_Supervision Group skinning for
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-543
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-543
+
+Row Row 102: GEN_4302_Group_Z0_NAV_Instruction_Mirroring_WIDGET Group ski
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-544
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-544
+
+Row Row 103: GEN_4301_Group_Z0_NAV_Instruction_WIDGET Group skinning for 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-545
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-545
+
+Row Row 104: GEN_4300_Group_Z0_NAV_InstructionAndMap_WIDGET Group skinnin
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-546
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-546
+
+Row Row 105: GEN_4032_Group_Empty_Perso_CARUSO Group skinning for E43x Cl
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-547
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-547
+
+Row Row 106: GEN_4012_Group_Z0_MediaPhone_Full_CARUSO Group skinning for 
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-548
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-548
+
+Row Row 107: GEN_2230_Direct_Widget_ConfigurationSelector Group skinning 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-549
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-549
+
+Row Row 108: GEN_2221_PermanentPanel_Z5_CMB_NUM_CARUSO Group skinning for
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-550
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-550
+
+Row Row 109: GEN_2201_PermanentPanel_CMB_NUM_CARUSO Group skinning for E4
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-551
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-551
+
+Row Row 110: GAUGE_4101_Group_Z0_RPM_WIDGET Group skinning for E43x Clust
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-552
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-552
+
+Row Row 111: GAUGE_4050_Group_HY_Powermeter_PHEV Group skinning for E43x 
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-553
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-553
+
+Row Row 112: GAUGE_4039_Group_TEMP_EAU_WIDGET Group skinning for E43x Clu
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-554
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-554
+
+Row Row 113: GAUGE_4037_Group_Accessories_Consumption_BEV_PHEV Group skin
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-555
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-555
+
+Row Row 114: GAUGE_4036_Group_JAUGE_CARB_percent_ICE_PHEV Group skinning 
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-556
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-556
+
+Row Row 115: GAUGE_4033_Group_JAUGE_CARB_ICE_PHEV Group skinning for E43x
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-557
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-557
+
+Row Row 116: GAUGE_4032_Group_HY_Powermeter_BEV Group skinning for E43x C
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-558
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-558
+
+Row Row 117: GAUGE_4031_Group_CT_ICE_PHEV Group skinning for E43x Cluster
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-559
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-559
+
+Row Row 118: GAUGE_4030_Group_Battery_PHEV Group skinning for E43x Cluste
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-560
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-560
+
+Row Row 119: GAUGE_4010_Group_Z0_POWERMETER_WIDGET Group skinning for E43
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-561
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-561
+
+Row Row 120: GAUGE_2452_Group_Z0_TACHY_Image_States Group skinning for E4
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-562
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-562
+
+Row Row 121: DRIVE_7000_Popup_MODE_ADAS Group skinning for E43x Cluster_7
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-563
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-563
+
+Row Row 122: DRIVE_6140_Popup_SALC_Maneuver_Ongoing_Right Group skinning 
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-564
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-564
+
+Row Row 123: DRIVE_6130_Popup_SALC_Maneuver_Ongoing_Left Group skinning f
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-565
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-565
+
+Row Row 124: DRIVE_6120_Popup_SALC_SELECTION_REQUEST Group skinning for E
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-566
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-566
+
+Row Row 125: DRIVE_5710_MenuPopup_Z1_ACC_TIV_GAP_SETTINGS Group skinning 
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-567
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-567
+
+Row Row 126: DRIVE_4000_Group_MINI_VIEW_ADAS Group skinning for E43x Clus
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-568
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-568
+
+Row Row 127: DRIVE_3220_Group_Z0_ADAS_WIDGET Group skinning for E43x Clus
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-569
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-569
+
+Row Row 128: DRIVE_2500_Group_Night_Vision Group skinning for E43x Cluste
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-570
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-570
+
+Row Row 129: DRIVE_2450_Group_Drive_Mode Group skinning for E43x Cluster_
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-571
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-571
+
+Row Row 130: DRIVE_2210_Group_Dynamic_G_CARUSO Group skinning for E43x Cl
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-572
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-572
+
+Row Row 131: DRIVE_2114_Group_Dynamic_CARUSO Group skinning for E43x Clus
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-573
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-573
+
+Row Row 132: DRIVE_1272_Group_ILV_2018_CARUSO Group skinning for E43x Clu
+   Type: Task | Priority: Low | Status: Done
+   [OK] Created: SCRUM-574
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-574
+
+Row Row 133: Cluster colors GEN_4239_Group_AMBIANCE skinning for E43x Clu
+   Type: Task | Priority: Low | Status: To Do
+   [OK] Created: SCRUM-575
+   URL: https://chatbotjira.atlassian.net/browse/SCRUM-575
+
+======================================================================
+  IMPORT SUMMARY
+======================================================================
+  Total rows     : 132
+  [OK] Created     : 132
+  [ERROR] Failed      : 0
+  [SKIP]  Skipped    : 0
+======================================================================
+
